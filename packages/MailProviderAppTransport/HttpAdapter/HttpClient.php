@@ -5,7 +5,7 @@ namespace Packages\MailProviderAppTransport\HttpAdapter;
 
 
 use Packages\MailProviderAppTransport\EmailDto;
-use Packages\MailProviderAppTransport\EmailDtoProvider;
+use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
 use Packages\MailProviderAppTransport\SerializerInterface;
 
 class HttpClient

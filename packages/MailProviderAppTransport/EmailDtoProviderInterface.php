@@ -2,7 +2,7 @@
 
 namespace Packages\MailProviderAppTransport;
 
-interface EmailDtoProvider
+interface EmailDtoProviderInterface
 {
     public function getEmail(string $uuid): EmailDto;
 }

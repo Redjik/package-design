@@ -4,17 +4,17 @@
 namespace Test\MailConsumerApp;
 
 
-use Packages\MailProviderAppTransport\EmailDtoProvider;
+use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
 use Packages\MailProviderAppTransport\EmailDto;
 
 class MailConsumerService
 {
     /**
-     * @var EmailDtoProvider
+     * @var EmailDtoProviderInterface
      */
-    private EmailDtoProvider $provider;
+    private EmailDtoProviderInterface $provider;
 
-    public function __construct(EmailDtoProvider $provider)
+    public function __construct(EmailDtoProviderInterface $provider)
     {
         $this->provider = $provider;
     }

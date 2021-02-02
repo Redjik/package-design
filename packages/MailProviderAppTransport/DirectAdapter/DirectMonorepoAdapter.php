@@ -5,17 +5,17 @@ namespace Packages\MailProviderAppTransport\DirectAdapter;
 
 
 use Packages\MailProviderAppTransport\EmailDto;
-use Packages\MailProviderAppTransport\EmailDtoProvider;
+use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
 
-class DirectMonorepoAdapter implements EmailDtoProvider
+class DirectMonorepoAdapter implements EmailDtoProviderInterface
 {
 
     /**
-     * @var EmailDtoProvider
+     * @var EmailDtoProviderInterface
      */
-    private EmailDtoProvider $provider;
+    private EmailDtoProviderInterface $provider;
 
-    public function __construct(EmailDtoProvider $provider)
+    public function __construct(EmailDtoProviderInterface $provider)
     {
         $this->provider = $provider;
     }

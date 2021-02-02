@@ -2,16 +2,16 @@
 
 namespace Packages\MailProviderAppTransport\HttpAdapter;
 
-use Packages\MailProviderAppTransport\EmailDtoProvider;
+use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
 
 class HttpServer
 {
     /**
-     * @var EmailDtoProvider
+     * @var EmailDtoProviderInterface
      */
-    private EmailDtoProvider $provider;
+    private EmailDtoProviderInterface $provider;
 
-    public function __construct(EmailDtoProvider $provider)
+    public function __construct(EmailDtoProviderInterface $provider)
     {
         $this->provider = $provider;
     }

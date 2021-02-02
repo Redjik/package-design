@@ -3,10 +3,10 @@
 namespace Test\MailProviderApp;
 
 use Packages\MailProviderAppTransport\EmailDto;
-use Packages\MailProviderAppTransport\EmailDtoProvider;
+use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
 use Packages\MailProviderAppTransport\SerializerInterface;
 
-class MailService implements EmailDtoProvider
+class MailService implements EmailDtoProviderInterface
 {
     public function getEmail(string $uuid): EmailDto
     {
