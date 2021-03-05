@@ -1,14 +1,13 @@
 <?php
 
 
-namespace Packages\MailProviderAppTransport\HttpAdapter;
+namespace Skyeng\Protocol\Source\Email\HttpAdapter;
 
 
-use Packages\MailProviderAppTransport\EmailDto;
-use Packages\MailProviderAppTransport\EmailDtoProviderInterface;
-use Packages\MailProviderAppTransport\SerializerInterface;
+use Skyeng\Protocol\Source\Email\Contract\Dto\EmailDto;
+use Skyeng\Protocol\Source\Email\Contract\MailServiceApiInterface;
 
-class EmailDtoOverHttpProviderInterface implements EmailDtoProviderInterface
+class HttpAdapter implements MailServiceApiInterface
 {
 
     /**
@@ -29,6 +28,7 @@ class EmailDtoOverHttpProviderInterface implements EmailDtoProviderInterface
     public function getEmail(string $uuid): EmailDto
     {
         $response = $this->client->sendRequestGetEmail($uuid);
-        return $this->serializer->deserializeEmail($response->getContents());
+        return $this->serializer->deserialize($response->getContents());
     }
+
 }

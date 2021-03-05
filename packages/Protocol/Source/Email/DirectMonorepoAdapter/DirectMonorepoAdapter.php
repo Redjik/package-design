@@ -1,12 +1,14 @@
 <?php
 
-namespace Test\MailConsumerApp;
+
+namespace Skyeng\Protocol\Source\Email\DirectMonorepoAdapter;
 
 use Skyeng\Protocol\Source\Email\Contract\Dto\EmailDto;
 use Skyeng\Protocol\Source\Email\Contract\MailServiceApiInterface;
 
-class MailConsumerService
+class DirectMonorepoAdapter implements MailServiceApiInterface
 {
+
     /**
      * @var MailServiceApiInterface
      */
@@ -17,9 +19,8 @@ class MailConsumerService
         $this->adapter = $adapter;
     }
 
-    public function processEmail(string $id): EmailDto
+    public function getEmail(string $uuid): EmailDto
     {
-        $email = $this->adapter->getEmail($id);
-        $this->process($email);
+        return $this->adapter->getEmail($uuid);
     }
 }
